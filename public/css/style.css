@@ -1,0 +1,33 @@
+body{
+    background-image: url("../index.jpg");
+}; 
+ 
+#map{
+    height:500px;
+
+}
+/* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+    
+    /* height: 100%; */
+    /* width:75%; */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* footer section */
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+ 
+/* footer section */     

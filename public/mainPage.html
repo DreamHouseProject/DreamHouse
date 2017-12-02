@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content=" width = device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+        <script type="text/javascript" src="./js/areaMap.js"> </script>
+
+    </head>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">
+                <i class="material-icons">cloud</i>Logo</a>
+            
+            <ul class="right hide-on-med-and-down ">
+                <li>
+                    <a href="#">
+                        <i class="material-icons">search</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="addProperty.html">
+                        <i class="material-icons">location_city</i>
+                    </a>
+                </li>
+                <li>
+                     <!-- Dropdown Trigger -->
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>
+                        <i class="material-icons">account_circle</i>
+                    </a>
+                <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                            <a href="addUser.html"><i class="material-icons">account_circle</i>New</a>
+                        </li>
+                        <li>
+                            <a href="#!"><i class="material-icons">account_circle</i>Sign In</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mobile.html">
+                        <i class="material-icons">more_vert</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <body>
+       
+        <div class="row">
+            <div class="col s7" id="map" style=" height:700px; background:yellow"></div>
+            <div class="input-field col s5">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </div>            
+            
+            
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&callback=initMap&language=en&region=US"></script>
+        <script type="text/css" src="./css/style.css"></script>
+        <script>
+            $(document).ready(function () {
+                Materialize.updateTextFields();
+                $('select').material_select();
+                $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 100, // Creates a dropdown of 15 years to control year,
+                    today: 'Today',
+                    clear: 'Clear',
+                    close: 'Ok',
+                    closeOnSelect: true // Close upon selecting a date,
+                });
+                // initMap();
+            });
+        </script>
+        
+    </body>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">REAL ESTATE</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright Srivatsava , Jake , Teera
+                <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+            </div>
+        </div>
+    </footer>
+</html>
