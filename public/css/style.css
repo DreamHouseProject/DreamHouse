@@ -50,6 +50,10 @@ body {
 	background-color: #1565c0 !important;
 }
 
+/*.listing-slider {
+	margin-bottom: -50px;
+}*/
+
 
 ul.horizontal-slide {
     margin: 0;
@@ -79,6 +83,23 @@ ul.horizontal-slide li[class*="col"]:first-child {
 	padding:1px;
 
 }
+
+.tabs-content.carousel .carousel-item {
+width: 100%;
+/*height: 950px !important;*/
+}
+
+.carousel {
+	margin-top: -250px;
+	margin-bottom: 40px;
+	height: 700px !important;
+}
+
+#img-carousel {
+	/*padding-bottom: 300px;*/
+}
+
+
 #listing-info {
 	overflow: auto;
 }
