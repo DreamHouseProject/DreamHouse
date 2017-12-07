@@ -58,13 +58,18 @@ body {
 
 }
 
+#listing-row {
+	height: 50px;
+}
+
+
 /*#listing-row {
 	height: 200px;
 }*/
 
 .responsive-img {
-	min-height: 150px;
-	min-width: 200px;
+	min-height: 100px;
+	min-width: 150px;
 }
 
 
@@ -84,7 +89,7 @@ body {
 	/*float: right;*/
 	text-align: right;
 	/*margin-right: 10px;*/
-	overflow: auto;
+	/*overflow: auto;*/
 }
 
 #discription {
