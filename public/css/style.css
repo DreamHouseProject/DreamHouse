@@ -103,7 +103,16 @@ width: 100%;
 #listing-info {
 	overflow: auto;
 }
-.zindex-value {
+
+.collapsible-body {
+	text-align: center;
+}
+
+#icons {
+	width: 80px;
+	height: auto;
+}
+.zestimate {
 	
 	text-align: right;
 	
