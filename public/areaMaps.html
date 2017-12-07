@@ -108,11 +108,13 @@
             background-color: #fff;
             font-family: Roboto;
             font-size: 15px;
-            font-weight: 300;
-            margin-left: 12px;
+            font-weight: 600;
+            margin-left: 20px;
+            margin-top: 10px;
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
             width: 400px;
+            height: 60px;
         }
 
         #pac-input:focus {
@@ -131,12 +133,14 @@
             width: 345px;
         }
     </style>
+    <script type="text/javascript" src="js/multiplemarkerlist.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Interested Area">
     <div id="map"></div>
-    <script>
+    <script type="text/javascript">
         // This example adds a search box to a map, using the Google Place Autocomplete
         // feature. People can enter geographical searches. The search box will return a
         // pick list containing a mix of places and predicted search terms.
@@ -145,12 +149,31 @@
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+       var locations; //locations from js/nultiplemarkerlist.js
+      
+
+
         function initAutocomplete() {
+
+            //Start map with San Francisco lat,long
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: -33.8688, lng: 151.2195 },
-                zoom: 14,
+                center: { lat: 37.773972, lng: -122.431297},
+                zoom: 12,
                 mapTypeId: 'roadmap'
             });
+
+             //To show your current location 
+            infoWindow = new google.maps.InfoWindow;
+            navigator.geolocation.getCurrentPosition(function(position) {
+             pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Your location');
+            infoWindow.open(map);
+          
+          })
 
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
@@ -163,11 +186,12 @@
             });
 
             var markers = [];
+
             // Listen for the event fired when the user selects a prediction and retrieve
             // more details for that place.
             searchBox.addListener('places_changed', function () {
                 var places = searchBox.getPlaces();
-
+                console.log(places)
                 if (places.length == 0) {
                     return;
                 }
@@ -180,6 +204,7 @@
 
                 // For each place, get the icon, name and location.
                 var bounds = new google.maps.LatLngBounds();
+                console.log(bounds)
                 places.forEach(function (place) {
                     if (!place.geometry) {
                         console.log("Returned place contains no geometry");
@@ -210,7 +235,27 @@
                 });
                 map.fitBounds(bounds);
             });
+      //TO Show house location
+      locations;  // call locations from global scope
+     var marker, i;
+     var infowindow = new google.maps.InfoWindow();
+     for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+           
+          infowindow.setContent(locations[i][3]);
+          infowindow.open(map, marker);
         }
+      })(marker, i));
+    }
+        }
+
+     
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&libraries=places&callback=initAutocomplete" async defer></script>
