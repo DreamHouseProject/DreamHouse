@@ -48,9 +48,6 @@
         <div class="col s12 m7">
             <h2 class="header">Property Details</h2>
             <div class="card horizontal">
-                <!-- <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                    </div> -->
                 <div class="card-stacked">
                     <div class="card-content light-blue lighten-5">
                         <form class="form-horizontal" ng-submit="submitStudnetForm()" role="form">
@@ -143,7 +140,6 @@
                                         </div>
                                     </div>
         
-        
                                 </form>
                             </div>
                             <div class="card-action light-blue lighten-3">
@@ -175,38 +171,6 @@
                     close: 'Ok',
                     closeOnSelect: true // Close upon selecting a date,
                 });
-                //var RetsRabbit = require('rets-rabbit-js');
-                var rrClient = new RetsRabbit({
-                    clientId: 'b06HDkXhyfek9acU2dy4IixGC79xglAEjE4FC7jQ', //b06HDkXhyfek9acU2dy4IixGC79xglAEjE4FC7jQ
-                    clientSecret: 'r4YP58Bi9Zd4MGRSsW8bIToriVoyLrDI0g9djlJr', //r4YP58Bi9Zd4MGRSsW8bIToriVoyLrDI0g9djlJr
-                    host: 'https',
-                    url: 'stage.retsrabbit.com/api',
-                    storageKey: 'access_token' //default is 'access_token' zEslLNj1TmcJLh5BkMYOZLvbhnwekNgGhjpYWYhx
-                });
-                console.log(rrClient)
-                console.log("before Rets rabbit")
-                RetsRabbit.ready(function () {
-                    console.log("in Rets rabbit")
-                    var q = {
-                        '$top': 20,
-                        '$select': 'ListingId, ListPrice'
-                    };
-                    console.log("q in RetsRabbit: " + q)
-                    //third param is for the access_token if you want directly 
-                    //pass it in, but it pulls from localStorage by default 
-                    rrClient.get('/v2/property', q, 'zEslLNj1TmcJLh5BkMYOZLvbhnwekNgGhjpYWYhx', function (err, res) {
-                        if (err) {
-                            console.log(err)
-                            //handle error 
-                        } else {
-                            var listings = res.value;
-                            //do awesome stuff with listings 
-                            console.log(listings)
-                        }
-                    });
-                    // console.log("in Rets rabbit")
-                });
-
             });
         </script>
 </body>
@@ -214,7 +178,13 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">REAL ESTATE</h5>
+                <img src="./images/Switch 3.png" alt="" height="80">
+                <br>
+
+                <a target="blank" href="https://github.com/DreamHouseProject/DreamHouse">
+                    <img id=github src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">
+                </a>
+
                 <p class="grey-text text-lighten-4"></p>
             </div>
             <div class="col l4 offset-l2 s12">
@@ -243,4 +213,6 @@
         </div>
     </div>
 </footer>
+<!-- Add Comment Collapse -->
+
 </html>

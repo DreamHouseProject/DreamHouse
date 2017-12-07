@@ -4,7 +4,10 @@
 // This code will be replaced once we integrate //
     var map, infoWindow;
     function initMap() {
-            
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.5, lng: -122.123 },
+                zoom: 12
+            });
             infoWindow = new google.maps.InfoWindow;
 
             // Try HTML5 geolocation.
