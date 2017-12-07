@@ -19,9 +19,8 @@ module.exports = function(app) {
   });
 
   // search route loads search.html
-  app.get("/search", function(req, res) {
-
-    res.sendFile(path.join(__dirname, "../public/search.html"));
+  app.get("/addUser", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/addUser.html"));
   });
 
   // seller route loads seller.html
@@ -33,5 +32,9 @@ module.exports = function(app) {
   app.get("/property", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/addProperty.html"));
   });
-
+  
+  app.get("/school", function (req, res) {
+    res.redirect('school-api.js')
+    //res.sendFile(path.join(__dirname, "../public/addUser.html"));
+  });
 };

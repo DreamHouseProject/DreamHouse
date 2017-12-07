@@ -8,6 +8,7 @@ $.ajax({
       url: queryURL1,
       method: "GET",
       dataType: "json",
+      data: {query: search}
       headers: { 
       	"apikey": "d9be0a346a7cf080f0ed014a6b61a9de",
       	"accept": "application/json" 

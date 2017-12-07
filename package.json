@@ -9,7 +9,10 @@
     "js-sdk": "github:retsly/js-sdk",
     "materialize": "^1.0.0",
     "mysql2": "^1.5.1",
-    "sequelize": "^4.23.1"
+    "nodemon": "^1.12.5",
+    "request": "^2.83.0",
+    "sequelize": "^4.23.1",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {},
   "scripts": {

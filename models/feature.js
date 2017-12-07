@@ -3,8 +3,14 @@ module.exports = function(sequelize, DataTypes) {
 
   var Feature = sequelize.define("features", {
     // Giving the Author model a name of type STRING
-    feature_name: DataTypes.STRING,
-    description: DataTypes.STRING,
+    feature_name: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.STRING
+    }
   }, {
       timestamps: false,
       freezeTableName: true

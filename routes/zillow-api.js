@@ -12,41 +12,40 @@ var parameters1 = {
   
 };
 
-zillow.get('GetSearchResults', parameters1)
-  .then(function(results) {
-  	// grabbing the zpid from the results and creating a variable to feed into the GetUpdatedPropertyDetails api
-  	var ZPID = results.response.results.result[0].zpid
-  	
-  	// Setting the params for the GetUpdatedPropertyDetails api
-  	var parameters2 = {
-  	// using the ZPID variable from the GetSearchResults api and feeding it into the params2
-  	zpid: ZPID
-  
-	};
+
 app.get('/zillow', function(req,res){
-  var parameters2 = req.query.search;
+  var parameters1 = req.query.search;
+  zillow.get('GetSearchResults', parameters1)
+    .then(function (results) {
+      // grabbing the zpid from the results and creating a variable to feed into the GetUpdatedPropertyDetails api
+      var ZPID = results.response.results.result[0].zpid
 
-  zillow.get('GetUpdatedPropertyDetails', parameters2)
-    .then(function(results) {
-      // creating a variable with listing details
-      var listDetails = results.response
-      // creating a variable with listing images
-      var listImages = results.response.images.image[0] 
-      
-      // Listing Details
-      console.log(listDetails)
+      // Setting the params for the GetUpdatedPropertyDetails api
+      var parameters2 = {
+        // using the ZPID variable from the GetSearchResults api and feeding it into the params2
+        zpid: ZPID
 
-      // Listing Images
-      console.log(listImages)
-      
-      return results;
-      // results here is an object { message: {}, request: {}, response: {}}  
-  })
+      };
+      zillow.get('GetUpdatedPropertyDetails', parameters2)
+        .then(function (results) {
+          // creating a variable with listing details
+          var listDetails = results.response
+          // creating a variable with listing images
+          var listImages = results.response.images.image[0]
+
+          // Listing Details
+          console.log(listDetails)
+
+          // Listing Images
+          console.log(listImages)
+
+          return results;
+          // results here is an object { message: {}, request: {}, response: {}}  
+        })
 
 
 })
 	
-
   zillow.get('GetZestimate', parameters2)
     .then(function(results) {
       

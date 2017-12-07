@@ -8,22 +8,39 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true
-            // autoIncrement: true
         },
-        property_type: DataTypes.STRING,
+        property_type: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         property_add_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        city: DataTypes.STRING,
-        property_date: DataTypes.DATE,
-        no_of_rooms: DataTypes.INTEGER,
-        area_size: DataTypes.INTEGER,
-        per_unit_price: DataTypes.FLOAT
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        property_date: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        no_of_rooms: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        area_size: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        per_unit_price: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }, {
-            timestamps: false,
-            freezeTableName: true
-        });
+        timestamps: false,
+        freezeTableName: true
+    });
 
     Property.associate = function (models) {
         // Associating Users with Posts
