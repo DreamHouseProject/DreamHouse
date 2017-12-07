@@ -54,3 +54,7 @@ function signIn() {
     console.log("SignIn function");
 
 };
+function getUsers() {
+    console.log("SignIn function");
+
+};
