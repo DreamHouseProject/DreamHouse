@@ -1,9 +1,8 @@
 module.exports = function (sequelize, DataTypes) {   
-    // Address Table==================================
+    // Address Table
 
     var Address = sequelize.define("address", {
-        // Giving the Author model a name of type STRING
-        // property_add_id: DataTypes.INTEGER,
+        // Giving the address model a name of type STRING
         city: {
             allowNull: false,
             type: DataTypes.STRING
@@ -42,11 +41,7 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Address.associate = function (models) {
-        // Associating Users with Posts
-        // When an Author is deleted, also delete any associated Posts
-        // Address.hasMany(models.Post, {
-        //     onDelete: "cascade"
-        // });
+        // Associating address with property
         Address.belongsTo(models.property, {
             foreignKey: {
                 allowNull: false

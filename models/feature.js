@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
 
   var Feature = sequelize.define("features", {
-    // Giving the Author model a name of type STRING
+    // Giving the features model a name of type STRING
     feature_name: {
       allowNull: false,
       type: DataTypes.STRING
@@ -17,11 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
   Feature.associate = function (models) {
-    // Associating Users with Posts
-    // When an Author is deleted, also delete any associated Posts
-    // Feature.hasMany(models.Post, {
-    //   onDelete: "cascade"
-    // });
+    // Associating features with property
     Feature.belongsTo(models.property, {
         foreignKey: {
             allowNull: false

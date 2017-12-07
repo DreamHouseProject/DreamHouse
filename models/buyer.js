@@ -3,8 +3,7 @@ module.exports = function (sequelize, DataTypes) {
    
     // Buyer Table
     var Buyer = sequelize.define("buyers", {
-        // Giving the Author model a name of type STRING
-        // user_id: DataTypes.INTEGER,
+        // Giving the buyers model a name of type STRING
         prop_type: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -44,8 +43,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Buyer.associate = function (models) {
-        // Associating Users with Posts
-        // When an Author is deleted, also delete any associated Posts
+        // Associating buyers with users
        Buyer.belongsTo(models.users,{
             foreignKey: {
                 allowNull: false

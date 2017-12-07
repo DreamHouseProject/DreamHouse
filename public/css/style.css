@@ -6,21 +6,11 @@
     height:500px;
 
 } 
-/* Optional: Makes the sample page fill the window. */
-
-/* html,
-body {
-     */
-    /* height: 100%; */
-    /* width:75%; */
-    /* margin: 0;
-    padding: 0;
-} */
 
 
 
 /* footer section */
- /* body {
+ /* footer {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -102,3 +92,13 @@ body {
 	width: 40px;
 	height: auto;
 }
+
+/* main Page parallax container height  */
+.parallax-container {
+      height: 600px;
+	}
+
+	
+nav{
+	margin-bottom:20px;
+}	

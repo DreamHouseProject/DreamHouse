@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "dreamhouse">
 
 <head>
     <meta charset="utf-8">
@@ -11,58 +11,21 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    </script>
+    <!-- <meta charset="utf-8"> -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     <script type="text/javascript" src="./js/areaMap.js"> </script>
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<nav>
-    <div class="nav-wrapper  #2E76C6">
-        <a href="/" class="logo brand-logo">
-            <!-- <i src="IMG_2895.PNG">cloud</i>Logo</a> -->
-            <img src="./images/Switch 3.png" alt="" height="80">
-        </a>
-
-
-        <ul class="right hide-on-med-and-down ">
-            <li>
-                <a href="#">
-                    <i class="material-icons">search</i>
-                </a>
-            </li>
-            <li>
-                <a href="addProperty.html">
-                    <i class="material-icons">home</i>
-                </a>
-            </li>
-            <li>
-                <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='dropdown1'>
-                    <i class="material-icons">account_circle</i>
-                </a>
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li>
-                        <a href="addUser.html">
-                            <i class="material-icons">account_circle</i>New</a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="material-icons">account_circle</i>Sign In</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="mobile.html">
-                    <i class="material-icons">more_vert</i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div id="navHeader"></div>
 
 <body>
-
+    
     <div class="row">
         <div class="col s7" id="map" style=" height:700px; "></div>
         <div class="input-field col s5">
@@ -74,15 +37,22 @@
 
 
             <!-- Collapsible Property Data Menu (Grab the Chart.js logic script tags bellow) -->
-            <ul class="collapsible popout" data-collapsible="expandable">
+            <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header">
-                        <i class="material-icons">View</i>Home Value</div>
+                        <i class="material-icons">View</i>Open Houses</div>
                     <div class="collapsible-body">
                         <span><a href="./listing.html">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">location_city</i>
                         </a></span>
-                        <canvas id="doughnut-chart" width="800" height="450"></canvas>
+                        <!-- <canvas id="doughnut-chart" width="800" height="450"></canvas> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">place</i>All Listings</div>
+                    <div class="collapsible-body">
+                        <span>Lorem ipsum dolor sit amet.</span>
                     </div>
                 </li>
                 <li>
@@ -90,6 +60,8 @@
                         <i class="material-icons">place</i>Neighborhood</div>
                     <div class="collapsible-body">
                         <span>Lorem ipsum dolor sit amet.</span>
+                        <!-- Element Showed -->
+                        
                     </div>
                 </li>
                 <li>
@@ -104,72 +76,151 @@
 
         </div>
     </div>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="./images/home1.jpg">
+        </div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="./images/home1.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="./images/home1.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="./images/home1.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="./images/home1.jpg">
+        </div>
+    </div>
 
-
-
+    <div class="col s12 m7">
+            
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <div ng-controller="AppCtrl as ctrl" ng-cloak>
+                    
+                        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">USER </span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <br>
+                            <br>
+                            <md-card-content>
+                                <form name="userForm">
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>User Type</label>
+                                            <md-select ng-model="ctrl.userType">
+                                                <md-option ng-repeat="userType in ctrl.userTypes" ng-value="userType.abbrev">
+                                                    {{userType.abbrev}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>First name</label>
+                                            <input ng-model="user.firstName">
+                                        </md-input-container>
+                    
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>Last name</label>
+                                            <input ng-model="theMax">
+                                        </md-input-container>
+                                    </div>
+                                    <div layout-gt-xs="row">
+                                        <div flex-gt-xs>
+                                            <label>DOB</label>
+                                            <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
+                                        </div>
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>Sex</label>
+                                            <md-select ng-model="ctrl.userSex">
+                                                <md-option ng-repeat="sex in ctrl.sex" ng-value="sex.abbrev">
+                                                    {{sex.abbrev}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                    
+                                    <div layout-gt-xs="row">
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>City</label>
+                                            <input ng-model="user.city">
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>State</label>
+                                            <md-select ng-model="ctrl.userState">
+                                                <md-option>
+                                                    <em>None</em>
+                                                </md-option>
+                                                <md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev">
+                                                    {{state.abbrev}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                    
+                                        <md-input-container class="md-block" flex-gt-sm>
+                                            <label>Postal Code</label>
+                                            <input name="postalCode" ng-model="user.postalCode" placeholder="12345" required md-maxlength="5">
+                                        </md-input-container>
+                                    </div>
+                                </form>
+                            </md-card-content>
+                            <!-- <md-card-actions layout="row" layout-align="end center">
+                                <md-button>Add</md-button>
+                                <md-button>Cancel</md-button>
+                            </md-card-actions> -->
+                        </md-card>
+                        <!-- <md-divider></md-divider> -->
+                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="submit">Submit</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="cancel">Cancel</a>
+                </div>
+            </div>
+        </div>
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&callback=initMap&language=en&region=US"></script>
-    <script>
-        $(document).ready(function () {
-            Materialize.updateTextFields();
-            $('select').material_select();
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 100, // Creates a dropdown of 15 years to control year,
-                today: 'Today',
-                clear: 'Clear',
-                close: 'Ok',
-                closeOnSelect: true // Close upon selecting a date,
-            });
-            // initMap();
-        });
-    </script>
 
     <!-- Chart.js logic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
     <!-- <script src="chart.js"></script> -->
+    <script src="./js/addUser.js"></script>
+    <script src="./js/index.js"></script>
 
+    
 </body>
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <img src="./images/Switch 3.png" alt="" height="80">
-                <br>
-
-                <a target="blank" href="https://github.com/DreamHouseProject/DreamHouse">
-                    <img id=github src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">
-                </a>
-
-                <p class="grey-text text-lighten-4"></p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 4</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2017 Copyright Srivatsava , Jake , Teera
-            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-        </div>
-    </div>
-</footer>
-<!-- Add Comment Collapse -->
-
+<!-- This is the footer section -->
+<div id="footer"></div>
 
 
 </html>
