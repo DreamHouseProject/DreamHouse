@@ -109,6 +109,11 @@ width: 100%;
 	overflow: auto;
 }
 
+.popout {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
 .collapsible-body {
 	text-align: center;
 }
