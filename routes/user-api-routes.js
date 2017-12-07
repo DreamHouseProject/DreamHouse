@@ -13,37 +13,41 @@ var db = require("../models");
 module.exports = function (app) {
 
     // GET route for getting all of the property
-    app.get("/api/property", function (req, res) {
+    app.get("/api/user", function (req, res) {
+        console.log("in api/user get function" + req.body)
         // findAll returns all entries for a table when used with no options
-        db.Property.findAll({
-            include: [
-                { model: db.Feature, as:'Feature'},
-                { model: db.Room, as: 'Room'},
-                { model: db.Address, as:'Address' } ]
-        }).then(function (dbProperty) {
+        db.users.findAll({
+            }).then(function (dbUser) {
             // We have access to the property as an argument inside of the callback function
-            res.json(dbProperty);
+            res.json(dbUser);
 
         });
     });
 
+    // include: [
+    //     { model: db.Buyer, as: 'Buyer' },
+    //     { model: db.Seller, as: 'Seller' }
+    // ]
     // POST route for saving a new property
-    app.post("/api/property", function (req, res) {
+    app.post("/api/user", function (req, res) {
         // create takes an argument of an object describing the item we want to
         // insert into our table. In this case we just we pass in an object with a text
         // and complete property (req.body)
-        db.Property.create({
-            property_type: req.body.property_type,
-            property_add_id: req.body.property_add_id,
+        db.users.create({
+            user_type: req.body.user_type,
+            fname: req.body.fname,
+            lname: req.body.lname,
+            dob: req.body.dob,
+            gender: req.body.gender,
+            password: req.body.password,
             city: req.body.city,
-            property_date: req.body.property_date,
-            no_of_rooms: req.body.no_of_rooms,
-            area_size: req.body.area_size,
-            per_unit_price: req.body.per_unit_price
-            
-        }).then(function (dbProperty) {
+            state: req.body.state,
+            zipcode: req.body.zipcode,
+            telephone: req.body.telephone,
+            email: req.body.email
+        }).then(function (dbUser) {
             // We have access to the new property as an argument inside of the callback function
-            res.json(dbProperty);
+            res.json(dbUser);
         })
             .catch(function (err) {
                 // Whenever a validation or flag fails, an error is thrown
@@ -54,37 +58,41 @@ module.exports = function (app) {
 
     // DELETE route for deleting property. We can get the id of the todo to be deleted from
     // req.params.id
-    app.delete("/api/property/:id", function (req, res) {
+    app.delete("/api/user/:id", function (req, res) {
         // We just have to specify which property we want to destroy with "where"
-        db.Property.destroy({
+        db.users.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbProperty) {
-            res.json(dbProperty);
+        }).then(function (dbUser) {
+            res.json(dbUser);
         });
 
     });
 
     // PUT route for updating property. We can get the updated todo data from req.body
-    app.put("/api/property", function (req, res) {
+    app.put("/api/user", function (req, res) {
 
         // Update takes in an object describing the properties we want to update, and
         // we use where to describe which objects we want to update
-        db.Property.update({
-            property_type: req.body.property_type,
-            property_add_id: req.body.property_add_id,
+        db.users.update({
+            user_type: req.body.user_type,
+            fname: req.body.fname,
+            lname: req.body.lname,
+            dob: req.body.dob,
+            gender: req.body.gender,
+            password: req.body.password,
             city: req.body.city,
-            property_date: req.body.property_date,
-            no_of_rooms: req.body.no_of_rooms,
-            area_size: req.body.area_size,
-            per_unit_price: req.body.per_unit_price
+            state: req.body.state,
+            zipcode: req.body.zipcode,
+            telephone: req.body.telephone,
+            email: req.body.email
         }, {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbProperty) {
-                res.json(dbProperty);
+            }).then(function (dbUser) {
+                res.json(dbUser);
             })
             .catch(function (err) {
                 // Whenever a validation or flag fails, an error is thrown
@@ -92,7 +100,4 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
-
-    
-
 };

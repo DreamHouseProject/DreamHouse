@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     // Property Table
 
     var Property = sequelize.define("property", {
-        // Giving the Author model a name of type STRING
+        // Giving the property model a name of type STRING
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -43,8 +43,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Property.associate = function (models) {
-        // Associating Users with Posts
-        // When an Author is deleted, also delete any associated Posts
+        // Associating property with features, rooms and address
+        // When an property is deleted, also delete any associated tables
         Property.hasMany(models.features, {
             onDelete: "cascade"
         });

@@ -1,8 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     
     var Room = sequelize.define("rooms", {
-        // Giving the Author model a name of type STRING
-        // property_id: DataTypes.INTEGER,
+        // Giving the room model a name of type STRING
         room_name: {
             allowNull: false,
             type: DataTypes.STRING
@@ -21,11 +20,8 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Room.associate = function (models) {
-        // Associating Users with Posts
-        // When an Author is deleted, also delete any associated Posts
-        // Room.hasMany(models.Post, {
-        //     onDelete: "cascade"
-        // });
+        // Associating rooms with property
+        
         Room.belongsTo(models.property, {
             foreignKey: {
                 allowNull: false
