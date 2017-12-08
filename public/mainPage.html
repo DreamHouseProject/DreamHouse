@@ -27,13 +27,14 @@
 <body>
     
     <div class="row">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div class="col s7" id="map" style=" height:700px; "></div>
         <div class="input-field col s5">
-            <input id="search" type="search" required>
+            <!-- <input id="search" type="search" required>
             <label class="label-icon" for="search">
                 <i class="material-icons">search</i>
-            </label>
-            <i class="material-icons">close</i>
+            </label> -->
+            <!-- <i class="material-icons">close</i> -->
 
 
             <!-- Collapsible Property Data Menu (Grab the Chart.js logic script tags bellow) -->
@@ -76,12 +77,13 @@
 
         </div>
     </div>
+    <!-- Location for house pictures to be displayed -->
     <div class="parallax-container">
         <div class="parallax">
             <img src="./images/home1.jpg">
         </div>
     </div>
-    <div class="section white">
+    <div class="section lime">
         <div class="row container">
             <div class="col s4">
                 <div class="card">
@@ -107,9 +109,9 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
+
     <div class="parallax-container">
         <div class="parallax">
             <img src="./images/home1.jpg">
@@ -209,10 +211,11 @@
             </div>
         </div>
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&callback=initMap&language=en&region=US"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
     <!-- Chart.js logic -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script> -->
     <!-- <script src="chart.js"></script> -->
     <script src="./js/addUser.js"></script>
     <script src="./js/index.js"></script>
