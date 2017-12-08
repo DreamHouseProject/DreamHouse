@@ -13,14 +13,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        property_add_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         property_date: {
             type: DataTypes.DATE,
             allowNull: false
