@@ -3,23 +3,16 @@ module.exports = function (sequelize, DataTypes) {
 
     var Address = sequelize.define("address", {
         // Giving the address model a name of type STRING
-        city: {
-            allowNull: false,
-            type: DataTypes.STRING
-        },
+        
         plot_num: {
             allowNull: false,
             type: DataTypes.INTEGER
-        },
-        property_name: {
-            allowNull: false,
-            type: DataTypes.STRING
         },
         floor_num: {
             allowNull: false,
             type: DataTypes.INTEGER
         },
-        area_name: {
+        city: {
             allowNull: false,
             type: DataTypes.STRING
         },
@@ -31,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             type: DataTypes.STRING
         },
-        zip: { 
+        zipcode: { 
             allowNull: false,
             type: DataTypes.INTEGER
         }
