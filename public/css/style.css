@@ -99,6 +99,19 @@ width: 100%;
 	overflow: auto;
 }
 
+#facts {
+	text-align: center;
+}
+
+h5, h4, h3 {
+	font-weight: bold;
+}
+
+.facts-api-font {
+	color: grey;
+	font-size: 18px;
+}
+
 .popout {
 	margin-top: 40px;
 	margin-bottom: 40px;
@@ -120,7 +133,7 @@ width: 100%;
 
 #discription {
 	text-align: justify;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 #github {
