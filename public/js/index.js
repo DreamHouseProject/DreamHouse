@@ -2,6 +2,8 @@ $(document).ready(function(){
     $("#navHeader").load("../header.html");
     $("#footer").load("../footer.html");
     Materialize.updateTextFields();
+    $('.carousel').carousel();
+    $('.materialboxed').materialbox();
     $('select').material_select();
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
@@ -11,9 +13,9 @@ $(document).ready(function(){
         close: 'Ok',
         closeOnSelect: true // Close upon selecting a date,
     });
-    $('#modal1').modal();
+    $('#userModal').modal();
     $('.parallax').parallax();
-    $(document).on("click", "#newUser", getUsers);
+    $(document).on("click", "#newUser", newUserModal);
     $(document).on("click", "#signIn", signIn);
     $(document).on("click", "#submit", addUsers);
 
@@ -53,4 +55,8 @@ function addUsers() {
 function signIn() {
     console.log("SignIn function");
 
+};
+function newUserModal() {
+    console.log("newUserModal function");
+    $('#userModal').modal();
 };
