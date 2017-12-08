@@ -13,7 +13,6 @@ $(document).ready(function(){
         close: 'Ok',
         closeOnSelect: true // Close upon selecting a date,
     });
-    $('#userModal').modal();
     $('.parallax').parallax();
     $(document).on("click", "#newUser", newUserModal);
     $(document).on("click", "#signIn", signIn);
