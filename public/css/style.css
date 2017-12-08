@@ -1,26 +1,10 @@
-/* body{
-    background-image: url("../index.jpg");
-}; 
- */
+
+
 #map{
     height:500px;
 
 } 
-
-
-
-/* footer section */
- /* footer {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  } */
- 
-/* footer section */     
+     
 .logo {
 	display: inline-block;
 
@@ -45,7 +29,7 @@
 }*/
 
 
-ul.horizontal-slide {
+/* ul.horizontal-slide {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -60,7 +44,7 @@ ul.horizontal-slide li[class*="col"] {
 
 ul.horizontal-slide li[class*="col"]:first-child {
     margin-left: 0;
-}
+} */
 
 .thumbnail {
 	margin-top: 25px;
@@ -95,9 +79,10 @@ width: 100%;
 }
 
 
-#listing-info {
-	overflow: auto;
-}
+/* #listing-info {
+    overflow-x: auto;
+    white-space: nowrap; 
+} */
 
 .popout {
 	margin-top: 40px;
