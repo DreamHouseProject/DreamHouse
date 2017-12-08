@@ -99,6 +99,10 @@ width: 100%;
 	overflow: auto;
 }
 
+#facts {
+	text-align: center;
+}
+
 .popout {
 	margin-top: 40px;
 	margin-bottom: 40px;
