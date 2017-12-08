@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
@@ -16,14 +15,13 @@
 
 </head>
 <div id="navHeader"></div>
-<body ng-controller="userController">
+<body>
     <!-- <div class="container"> -->
         <div class="col s12 m7">
             <h2 class="header">Property Details</h2>
             <div class="card horizontal">
                 <div class="card-stacked">
                     <div class="card-content">
-                        <form class="form-horizontal" ng-submit="submitStudnetForm()" role="form">
         
                             <div class="row">
                                 <form class="col s12">
@@ -131,21 +129,6 @@
         </div>    
     <!-- </div> -->
     
-
-        <script>
-            $(document).ready(function () {
-                Materialize.updateTextFields();
-                $('select').material_select();
-                $('.datepicker').pickadate({
-                    selectMonths: true, // Creates a dropdown to control month
-                    selectYears: 100, // Creates a dropdown of 15 years to control year,
-                    today: 'Today',
-                    clear: 'Clear',
-                    close: 'Ok',
-                    closeOnSelect: true // Close upon selecting a date,
-                });
-            });
-        </script>
         <script src="./js/index.js"></script>
 </body>
 <!-- This is the footer section -->

@@ -13,9 +13,9 @@ $(document).ready(function(){
         close: 'Ok',
         closeOnSelect: true // Close upon selecting a date,
     });
-    $('#modal1').modal();
+    $('#userModal').modal();
     $('.parallax').parallax();
-    $(document).on("click", "#newUser", getUsers);
+    $(document).on("click", "#newUser", newUserModal);
     $(document).on("click", "#signIn", signIn);
     $(document).on("click", "#submit", addUsers);
 
@@ -56,7 +56,7 @@ function signIn() {
     console.log("SignIn function");
 
 };
-function getUsers() {
-    console.log("SignIn function");
-
+function newUserModal() {
+    console.log("newUserModal function");
+    $('#userModal').modal();
 };
