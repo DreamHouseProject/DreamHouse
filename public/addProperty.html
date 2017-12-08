@@ -68,7 +68,7 @@
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s2">
-                                    <select>
+                                    <select id="property_type">
                                         <option value="" disabled selected>Property Type</option>
                                         <option value="1">Houses</option>
                                         <option value="2">Condos</option>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="input-field col s2">
                                     <i class="material-icons prefix">location_city</i>
-                                    <input id="zipcode" type="text" class="validate">
+                                    <input id="zipcode" type="number" length="5" class="validate">
                                     <label for="zipcode">Zipcode</label>
                                 </div>
                                 <div class="input-field col s3">
@@ -101,11 +101,11 @@
                             </div>
                             <div class="row">    
                                 <div class="input-field col s3">
-                                    <input id="plot_num" type="text" class="validate">
+                                    <input id="plot_num" type="number" class="validate">
                                     <label for="plot_num">Plot Number</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input id="floor_num" type="text" class="validate">
+                                    <input id="floor_num" type="number" class="validate">
                                     <label for="floor_num">Floor Number</label>
                                 </div>
                                 <div class="input-field col s3">
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">room</i>
-                                    <input id="room_name" type="number" class="validate">
+                                    <input id="room_name" type="text" class="validate">
                                     <label for="room_name">Room Name</label>
                                 </div>
                                 <div class="input-field col s4">
@@ -151,7 +151,7 @@
                                         <div class="file-field input-field">
                                             <div class="btn blue lighten-5">
                                                 <a><i class="material-icons left">image</i>IMAGES</a>
-                                                <input type="file" multiple>
+                                                <input id="images" type="file" multiple>
                                             </div>
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text" placeholder="Upload one or more files">
@@ -166,7 +166,7 @@
                     <div class="card-action">
                         <div class="row">
                             <div class="input-field col s12">
-                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                <button class="btn cyan waves-effect waves-light right" id="addProperty" type="submit" name="action">Submit
                                     <i class="mdi-content-send right"></i>
                                 </button>
                             </div>
@@ -178,7 +178,7 @@
         </div>
     </div>    
     <!-- </div> -->
-    
+        <script src="./js/property.js"></script>
         <script src="./js/index.js"></script>
 </body>
 <!-- This is the footer section -->

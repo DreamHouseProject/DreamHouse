@@ -32,9 +32,8 @@ module.exports = function (app) {
         // create takes an argument of an object describing the item we want to
         // insert into our table. In this case we just we pass in an object with a text
         // and complete property (req.body)
-        db.Property.create({
+        db.property.create({
             property_type: req.body.property_type,
-            property_add_id: req.body.property_add_id,
             city: req.body.city,
             property_date: req.body.property_date,
             no_of_rooms: req.body.no_of_rooms,
@@ -43,7 +42,8 @@ module.exports = function (app) {
             
         }).then(function (dbProperty) {
             // We have access to the new property as an argument inside of the callback function
-            res.json(dbProperty);
+            // res.json(dbProperty);
+            console.log(dbProperty)
         })
             .catch(function (err) {
                 // Whenever a validation or flag fails, an error is thrown
@@ -56,7 +56,7 @@ module.exports = function (app) {
     // req.params.id
     app.delete("/api/property/:id", function (req, res) {
         // We just have to specify which property we want to destroy with "where"
-        db.Property.destroy({
+        db.property.destroy({
             where: {
                 id: req.params.id
             }
@@ -71,7 +71,7 @@ module.exports = function (app) {
 
         // Update takes in an object describing the properties we want to update, and
         // we use where to describe which objects we want to update
-        db.Property.update({
+        db.property.update({
             property_type: req.body.property_type,
             property_add_id: req.body.property_add_id,
             city: req.body.city,
