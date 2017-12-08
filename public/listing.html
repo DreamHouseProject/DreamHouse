@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content=" width = device-width, initial-scale=1.0">
+    <!-- Materialize Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
+    <!-- Materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- jquery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <!-- Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    </script>
+    <!-- Our CSS -->
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
-<nav>
-    <div class="nav-wrapper    #2E76C6">
-        <a href="/" class="logo brand-logo">
-            <!-- <i src="IMG_2895.PNG">cloud</i>Logo</a> -->
-            <img src="./images/Switch 3.png" alt="" height="80">
-        </a>
 
-
-        <ul class="right hide-on-med-and-down ">
-            <li>
-                <a href="#">
-                    <i class="material-icons">search</i>
-                </a>
-            </li>
-            <li>
-                <a href="addProperty.html">
-                    <i class="material-icons">home</i>
-                </a>
-            </li>
-            <li>
-                <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='dropdown1'>
-                    <i class="material-icons">account_circle</i>
-                </a>
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li>
-                        <a href="addUser.html">
-                            <i class="material-icons">account_circle</i>New</a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="material-icons">account_circle</i>Sign In</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="mobile.html">
-                    <i class="material-icons">more_vert</i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+<div id="navHeader"></div>
 <body>
-    <!-- <br> -->
+
     <div id="listing-row" class="row" style="overflow-x: auto; white-space: nowrap;">
         <div id="listing-col" class="col s3 m3">
             <div class="card">
@@ -103,27 +59,71 @@
                 </div>
             </div>
         </div>
-
+    
     </div>
+    
+    <div class="row">
+        <div class="col s12">
+            <div class="divider"></div>
+        </div>
+    </div>
+<div class="wrapper">
+    
+    <div class="row">
+        <div class="col s4">
+            <h3 id="street">350 Magellan</h3>
+            <h5 id="city">Half Moon Bay |
+                <span id="state">California | </span>
+                <span>94109</span>
+            </h5>
+            <h5 id="beds">4 Beds |
+                <span id="baths">4 Baths | </span>
+                <span id="sqft">3,623 sqft</span>
+            </h5>
+            
+        </div>
+        <div class="col s8">
+                <h3 class="zestimate">$1,864,581</h3>
+            
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col s4">
+                <p id="discription">
+                    Impressive home in a great location. 4BR, MBR has ocean views, and rare studio on the 3rd level with awesome views of the
+                    ocean. Gourmet kitchen, huge family room, DR, & LR, with hardwood throughout the first floor.
+                </p>
+            
+        </div>
+        <div class="col s8">
+            <div id="img-carousel">
+                <div class="carousel">
+                    <a class="carousel-item" href="#one!">
+                        <img class="materialboxed" src="https://photos.zillowstatic.com/p_f/IS-1ub6ohmnktkkd.jpg">
+                    </a>
+                    <a class="carousel-item" href="#two!">
+                        <img class="materialboxed" src="https://photos.zillowstatic.com/p_f/IS-1uagcw9oslowt.jpg">
+                    </a>
+                    <a class="carousel-item" href="#three!">
+                        <img class="materialboxed" src="https://photos.zillowstatic.com/p_f/IS-3s8nmbg8es0t.jpg">
+                    </a>
+                    <a class="carousel-item" href="#four!">
+                        <img class="materialboxed" src="https://photos.zillowstatic.com/p_f/IS-1uagcw5qqdkyl.jpg">
+                    </a>
+                    <a class="carousel-item" href="#five!">
+                        <img class="materialboxed" src="https://photos.zillowstatic.com/p_f/IS-3s8nmfeamvz1.jpg">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 
     <!-- House Image Carousel Expands When Clicked On-->
-    <div class="carousel">
-        <a class="carousel-item" href="#one!">
-            <img class="materialboxed" src="https://lorempixel.com/250/250/nature/1">
-        </a>
-        <a class="carousel-item" href="#two!">
-            <img class="materialboxed" src="https://lorempixel.com/250/250/nature/2">
-        </a>
-        <a class="carousel-item" href="#three!">
-            <img class="materialboxed" src="https://lorempixel.com/250/250/nature/3">
-        </a>
-        <a class="carousel-item" href="#four!">
-            <img class="materialboxed" src="https://lorempixel.com/250/250/nature/4">
-        </a>
-        <a class="carousel-item" href="#five!">
-            <img class="materialboxed" src="https://lorempixel.com/250/250/nature/5">
-        </a>
-    </div>
+        
     <div class="row">
         <div class="col s12">
             <div class="divider"></div>
@@ -133,117 +133,69 @@
 
         <div class="row" id="listing-info">
             <div class="col s6">
-                <h3 id="street">350 Magellan</h3>
-                <h5 id="city">Half Moon Bay |
-                    <span id="state">California | </span>
-                    <span>94109</span>
-                </h5>
-                <h5 id="beds">4 Beds |
-                    <span id="baths">4 Baths | </span>
-                    <span id="sqft">3,623 sqft</span>
-                </h5>
-                <p id="discription">
-                    Impressive home in a great location. 4BR, MBR has ocean views, and rare studio on the 3rd level with awesome views of the
-                    ocean. Gourmet kitchen, huge family room, DR, & LR, with hardwood throughout the first floor.
-                </p>
             </div>
             <div class="col s6">
-                <h3 class="zindex-value">$1,027,500</h3>
             </div>
         </div>
 
         <br>
 
         <h5 id="facts">Facts and Features</h5>
-        <ul class="collapsible popout" data-collapsible="accordion">
+
+        <ul class="collapsible popout" id="popout" data-collapsible="expandable">
             <li>
                 <div class="collapsible-header">
-                    <i class="material-icons">View</i>Home Value</div>
+                    <i class="material-icons">arrow_drop_down</i><h5>Home Value</h5>
+                </div>
                 <div class="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
-                    <canvas id="doughnut-chart" width="800" height="450"></canvas>
+                    <div class="row">
+                        <div class="col s4">
+                            <img id="icons" src="https://cdn3.iconfinder.com/data/icons/real-estate-property/33/house_price_2-512.png" alt="">
+                            <h5>Value Range</h5>
+                            <div id="low">$1.77m - 
+                                <span id="high">$1.96m</span>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <img id="icons" src="http://www.wisesmallbusiness.com/wp-content/uploads/2017/01/costicon.png?x55583" alt="">
+                            <h5>Last 30 Day Change</h5>
+                            <div id="30-day-change">$5,798</div>
+                        </div>
+                        <div class="col s4">
+                            <img id="icons" src="https://cdn1.iconfinder.com/data/icons/business-seo-vol-4/512/1-17-512.png" alt="">
+                            <h5>One Year Forcast</h5>
+                            <div id="high">$1.96m</divz>
+                        </div>
+                    </div>
                 </div>
             </li>
             <li>
                 <div class="collapsible-header">
-                    <i class="material-icons">place</i>Neighborhood</div>
+                    <i class="material-icons">arrow_drop_down</i><h5>Neighborhood</h5>
+                </div>
                 <div class="collapsible-body">
                     <span>Lorem ipsum dolor sit amet.</span>
                 </div>
             </li>
             <li>
                 <div class="collapsible-header">
-                    <i class="material-icons">whatshot</i>Nearby Schools</div>
+                    <i class="material-icons">arrow_drop_down</i><h5>Nearby Schools</h5></div>
                 <div class="collapsible-body">
                     <span>Lorem ipsum dolor sit amet.</span>
                 </div>
             </li>
         </ul>
     </div>
-   
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBArDQ0JOpcYDoISzBQndh9zZ98qZKLOsQ&callback=initMap&language=en&region=US"></script>
-    <script>
-        $(document).ready(function () {
-            Materialize.updateTextFields();
-            $('.carousel').carousel();
-            $('.materialboxed').materialbox();
-            $('select').material_select();
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 100, // Creates a dropdown of 15 years to control year,
-                today: 'Today',
-                clear: 'Clear',
-                close: 'Ok',
-                closeOnSelect: true // Close upon selecting a date,
-            });
-            // initMap();
-        });
-    </script>
+  
 
-    <!-- Chart.js logic -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
-    <script src="chart.js"></script>
-
+    <script src="./js/index.js"></script>
+ 
 </body>
 
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <img src="./images/Switch 3.png" alt="" height="80">
-                <br>
-
-                <a target="blank" href="https://github.com/DreamHouseProject/DreamHouse">
-                    <img id=github src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">
-                </a>
-
-                <p class="grey-text text-lighten-4"></p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 4</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2017 Copyright Srivatsava , Jake , Teera
-            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-        </div>
-    </div>
-</footer>
+<div id="footer"></div>
 
 </html>
+    
+
+
+

@@ -2,6 +2,8 @@ $(document).ready(function(){
     $("#navHeader").load("../header.html");
     $("#footer").load("../footer.html");
     Materialize.updateTextFields();
+    $('.carousel').carousel();
+    $('.materialboxed').materialbox();
     $('select').material_select();
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
