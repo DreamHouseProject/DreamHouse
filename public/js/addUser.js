@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    $("#navHeader").load("../header.html");
-    $("#footer").load("../footer.html");
     Materialize.updateTextFields();
     $('.carousel').carousel();
     $('.materialboxed').materialbox();
@@ -14,33 +12,34 @@ $(document).ready(function () {
         closeOnSelect: true // Close upon selecting a date,
     });
     $('.parallax').parallax();
-    $(document).on("click", "#newUser", newUserModal);
+    $(document).on("click", "#newUser", newUser);
     $(document).on("click", "#signIn", signIn);
-    $(document).on("click", "#submit", addUsers);
+    $(document).on("click", "#userSubmit", addUsers);
 
 
 })
 function addUsers() {
+    
     console.log("addusers function");
+    console.log($('#user_type option:selected').text());
     var userInput = {
-        user_type: "Buyer",
-        fname: "Sri",
-        lname: "req.body.lname",
-        dob: "1/1/1976",
-        gender: "Male",
-        password: "abcd",
-        city: "pittsburg",
-        state: "CA",
-        zipcode: 94565,
-        telephone: 9252030972,
-        email: "ding@dong.com"
+        user_type: $('#user_type option:selected').text(),
+        fname: $("#first_name").val(),
+        lname: $("#last_name").val(),
+        dob: $("#dob").val(),
+        gender: $('#gender option:selected').text(),
+        password: $("#password").val(),
+        city: $("#city").val(),
+        state: $("#state").val(),
+        zipcode: $("#zipcode").val(),
+        telephone: $("#telephone").val(),
+        email: $("#email").val()
     };
-
+    console.log(userInput);
     $.ajax({
         url: '/api/user',
         type: 'POST',
-        dataSet: JSON,
-        data: { userInput },
+        data: userInput,
 
         success: function (userData) {
             console.log(userData);
@@ -54,8 +53,4 @@ function addUsers() {
 function signIn() {
     console.log("SignIn function");
 
-};
-function newUserModal() {
-    console.log("newUserModal function");
-    $('#userModal').modal();
 };

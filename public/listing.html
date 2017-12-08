@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content=" width = device-width, initial-scale=1.0">
-    <!-- Materialize Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- jquery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- Materialize Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <!-- Our CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content=" width = device-width, initial-scale=1.0">
+<!-- Materialize Fonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Materialize Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<!-- jquery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Materialize Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- Our CSS -->
+<link rel="stylesheet" href="./css/style.css">
 </head>
 
-<div id="navHeader"></div>
+<!-- <div id="navHeader"></div> -->
+<nav>
+    <div class="nav-wrapper  #2E76C6">
+        <a href="/" class="logo brand-logo">
+            <!-- <i src="IMG_2895.PNG">cloud</i>Logo</a> -->
+            <img src="./images/Switch 3.png" alt="" height="80">
+        </a>
 
+
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <a href="listing.html">
+                    <i class="material-icons">search</i>
+                </a>
+            </li>
+            <li>
+                <a href="addProperty.html">
+                    <i class="material-icons">location_city</i>
+                </a>
+            </li>
+            <li>
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='dropdown1'>
+                    <i class="material-icons">people</i>
+                </a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li>
+                        <a class="waves-effect waves-light modal-trigger" href="addUser.html" id="newUser">
+                            <i class="material-icons">person_add</i>New</a>
+                    </li>
+                    <li>
+                        <a href="#!" id="signIn">
+                            <i class="material-icons">person_pin</i>Sign In</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/">
+                    <i class="material-icons">more_vert</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <body>
 
     <div id="listing-row" class="row" style="overflow-x: auto; white-space: nowrap;">
@@ -477,17 +519,55 @@
 
 </body>
 
-<div id="footer"></div>
+<!-- <div id="footer"></div> -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <img src="./images/Switch 3.png" alt="" height="80">
+                <br>
 
+                <a target="blank" href="https://github.com/DreamHouseProject/DreamHouse">
+                    <img id=github src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">
+                </a>
+                <p class="grey-text text-lighten-4"></p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Home Loans</h5>
+                <ul>
+                    <li>
+                        <a target="blank" href="https://www.wellsfargo.com/mortgage/buying-a-house/">
+                            <!-- <img id="icons" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/02/Wells-Fargo-Mobile-logo-design-for-apps.png"> -->
+                            <h6 class="white-text">Wells Fargo</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="blank" href="https://www.bankofamerica.com/mortgage/#/mortgage">
+                            <!-- <img id="github" src="http://blog.i-agent.com/wp-content/uploads/2011/11/com.infonow.bofa_icon.png"> -->
+                            <h6 class="white-text">Bank of America</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="blank" href="https://www.chase.com/personal/home-lending/mortgage">
+                            <!-- <img id="icons" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/02/Chase-Mobile-app-logo-icon.png"> -->
+                            <h6 class="white-text">Chase</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="blank" href="https://mortgage.citi.com/cmi/PaidSearch/Conforming/Chip/LF2/default.htm?ISN=14817-9&BTST=9031939&btlp=dual&cmp=KNC~05~171309~BNKMORTG~GOOGLE~T~S~e~citibank+home+loans&ProspectID=56424037C2094047941C50DAA0553D37">
+                            <!-- <img id="github" src="https://blog.carvinglabs.com/content/images/2016/11/citibank.png"> -->
+                            <h6 class="white-text">Citibank</h6>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 Copyright Srivatsava , Jake , Teera
+            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
+    </div>
+</footer>
 </html>
-                    
-                    
-                
-                
-                
-                                
-                                
-         
-          
-        
-                    
