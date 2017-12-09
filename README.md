@@ -1,4 +1,9 @@
-# DreamHouse Project , Developer Team: Sricatsava, Jake, Teera
+# DreamHouse Project , 
+
+#Developer Team: 
+-Srivatsava Chimakurthi
+-Jake Chaplin
+-Teera Kositpantavong
 
 Welcome to Switch, Your Housing Connection!
 
