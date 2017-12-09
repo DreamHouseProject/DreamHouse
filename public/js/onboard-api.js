@@ -1,5 +1,6 @@
 // onboard api key is: d9be0a346a7cf080f0ed014a6b61a9de
-var postalCode = "94103"
+var postalCode = $("#pac-input").val();
+console.log(postalCode);
 
 //  Onboard api Community Data
 var queryURL1 = "https://search.onboard-apis.com/communityapi/v2.0.0/Area/Full/?AreaId=ZI" + postalCode
@@ -8,7 +9,7 @@ $.ajax({
       url: queryURL1,
       method: "GET",
       dataType: "json",
-      data: {query: search}
+      data: {query: search},
       headers: { 
       	"apikey": "d9be0a346a7cf080f0ed014a6b61a9de",
       	"accept": "application/json" 
