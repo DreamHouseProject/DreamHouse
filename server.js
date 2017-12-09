@@ -37,8 +37,7 @@ app.use(express.static("public"));
  require("./routes/school-api.js")(app)
  require("./routes/property-routes.js")(app);
  require("./routes/user-api-routes.js")(app);
- //require("./routes/search-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
+ require("./routes/search-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

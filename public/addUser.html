@@ -22,9 +22,21 @@
 
         <ul class="right hide-on-med-and-down">
             <li>
-                <a href="listing.html">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='searchDropdown'>
                     <i class="material-icons">search</i>
                 </a>
+                <!-- Dropdown Structure -->
+                <ul id='searchDropdown' class='dropdown-content'>
+                    <li>
+                        <a href="/api/search" id="searchSF">
+                            <i class="material-icons">search</i>San Francisco</a>
+                    </li>
+                    <li>
+                        <a href="/api/search" id="searchSD">
+                            <i class="material-icons">search</i>San Diego</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="addProperty.html">
@@ -33,11 +45,11 @@
             </li>
             <li>
                 <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='dropdown1'>
+                <a class='dropdown-button btn blue darken-1' id="hover" href='#' data-activates='userDropdown'>
                     <i class="material-icons">people</i>
                 </a>
                 <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
+                <ul id='userDropdown' class='dropdown-content'>
                     <li>
                         <a class="waves-effect waves-light modal-trigger" href="addUser.html" id="newUser">
                             <i class="material-icons">person_add</i>New</a>
