@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $("#navHeader").load("../header.html");
-    $("#footer").load("../footer.html");
+    // $("#navHeader").load("../header.html");
+    // $("#footer").load("../footer.html");
     Materialize.updateTextFields();
     $('.carousel').carousel();
     $('.materialboxed').materialbox();
@@ -14,48 +14,35 @@ $(document).ready(function(){
         closeOnSelect: true // Close upon selecting a date,
     });
     $('.parallax').parallax();
-    $(document).on("click", "#newUser", newUserModal);
-    $(document).on("click", "#signIn", signIn);
-    $(document).on("click", "#submit", addUsers);
+    // $(document).on("click", "#newUser", newUserModal);
+    // $(document).on("click", "#signIn", signIn);
+    // $(document).on("click", "#submit", addUsers);
+    $(document).on("click", "#searchSF", search);
+    $(document).on("click", "#searchSD", search);
+    
 
     
 })
-function addUsers() {
-    console.log("addusers function");
-    var userInput = {
-        user_type: "Buyer",
-        fname: "Sri",
-        lname: "req.body.lname",
-        dob: "1/1/1976",
-        gender: "Male",
-        password: "abcd",
-        city: "pittsburg",
-        state: "CA",
-        zipcode: 94565,
-        telephone: 9252030972,
-        email: "ding@dong.com"
-    };
 
+function search(event){
+    event.preventDefault();
+    console.log("in listingsData")
+    var str = $(this).text().trim(); 
+    if (str=== "searchSan Francisco"){
+        str = "SanFrancisco"
+    }else{
+        str = "SanDiego"
+    }
+    // var res = str.substr(6);
+    // q = q.slice(6)
     $.ajax({
-        url: '/api/user',
-        type: 'POST',
+        url: '/api/search',
+        type: 'GET',
+        data: {query:str},
         dataSet: JSON,
-        data: { userInput },
+        success: function (listData) {
+            console.log(listData);
 
-        success: function (userData) {
-            console.log(userData);
         }
     });
-
-
-
-};
-
-function signIn() {
-    console.log("SignIn function");
-
-};
-function newUserModal() {
-    console.log("newUserModal function");
-    $('#userModal').modal();
 };

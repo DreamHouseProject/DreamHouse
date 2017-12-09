@@ -50,6 +50,54 @@ module.exports = function (app) {
                 // We can "catch" the error to prevent it from being "thrown", which could crash our node app
                 res.json(err);
             });
+        db.features.create({
+            feature_name: req.body.property_type,
+            description: req.body.city
+            
+        }).then(function (dbFeatures) {
+            // We have access to the new property as an argument inside of the callback function
+            // res.json(dbFeatures);
+            console.log(dbFeatures)
+        })
+            .catch(function (err) {
+                // Whenever a validation or flag fails, an error is thrown
+                // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+                res.json(err);
+            });
+        db.rooms.create({
+            room_name: req.body.room_name,
+            area: req.body.area,
+            images: req.body.images
+            
+
+        }).then(function (dbRooms) {
+            // We have access to the new property as an argument inside of the callback function
+            // res.json(dbRooms);
+            console.log(dbRooms)
+        })
+            .catch(function (err) {
+                // Whenever a validation or flag fails, an error is thrown
+                // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+                res.json(err);
+            });
+        db.address.create({
+            plot_num: req.body.plot_num,
+            city: req.body.city,
+            state: req.body.state,
+            country: req.body.country,
+            zipcode: req.body.zipcode,
+            floor_num: req.body.floor_num
+
+        }).then(function (dbAddress) {
+            // We have access to the new property as an argument inside of the callback function
+            // res.json(dbAddress);
+            console.log(dbAddress)
+        })
+            .catch(function (err) {
+                // Whenever a validation or flag fails, an error is thrown
+                // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+                res.json(err);
+            });                    
     });
 
     // DELETE route for deleting property. We can get the id of the todo to be deleted from

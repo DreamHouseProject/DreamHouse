@@ -1,8 +1,6 @@
 // Requiring our models
-var db = require("../models");
 var Zillow = require('node-zillow');
 
-// var ApiList = require('./api-list.js')
 // Routes
 // =============================================================
 module.exports = function (app) {
