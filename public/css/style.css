@@ -23,11 +23,23 @@
 #hover:hover {
 	background-color: #1565c0 !important;
 }
+/* .card .card-image img{
+    display: inline-block;
 
-/*.listing-slider {
-	margin-bottom: -50px;
+} */
+/* #listing-row{
+    height: 200px;
 }*/
-
+/* .center-cols > .col {
+  float:none; 
+  display: inline-block;
+  text-align: initial; 
+}  */
+#listing-row>#listing-col{
+    float:none !important;
+    display:inline-block !important;
+    overflow-x: scroll !important;;
+ }
 
 /* ul.horizontal-slide {
     margin: 0;

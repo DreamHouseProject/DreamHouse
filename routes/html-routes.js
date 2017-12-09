@@ -24,17 +24,24 @@ module.exports = function(app) {
   });
 
   // seller route loads seller.html
-  app.get("/seller", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/seller.html"));
+  app.get("/listing", function(req, res) {
+    console.log("in /listing");
+    res.sendFile(path.join(__dirname, "../public/listing.html"));
+    // res.redirect("/api/search/SFO");
+  });
+  app.get("/listing/SD", function (req, res) {
+    console.log("in /listing");
+    res.sendFile(path.join(__dirname, "../public/listing.html"));
+    res.redirect("/api/search/SD");
+    
   });
 
   // property route loads addProperty.html
-  app.get("/property", function(req, res) {
+  app.get("/addProperty", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/addProperty.html"));
   });
   
   app.get("/school", function (req, res) {
-    res.redirect('school-api.js')
-    //res.sendFile(path.join(__dirname, "../public/addUser.html"));
+    // res.sendFile(path.join(__dirname, "../public/addUser.html"));
   });
 };
